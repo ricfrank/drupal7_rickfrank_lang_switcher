@@ -1,4 +1,4 @@
-drupal7_rickfrank_lang_switcher
+Drupal7 language switcher block customizer
 ===============================
 
 Drupal 7 module to customize i18n language switcher block markup.
