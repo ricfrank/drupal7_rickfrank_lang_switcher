@@ -1,0 +1,9 @@
+name = ricfrank lang switcher
+description = Module to customize language switcher block
+core = 7.x
+package = 
+php = 
+version = 1.0
+dependencies[] = i18n 
+files[] = 
+configure = 

@@ -1,0 +1,30 @@
+<?php
+
+function ricfrank_lang_switcher_theme($existing, $type, $theme, $path) {
+  if ($type == 'module') {
+    return array(
+        'lang_switcher' => array(
+            'template' => 'lang-switcher-block',
+            'variables' => array()
+        ),
+    );
+  }
+}
+
+/**
+ * Implements hook_block_view_alter();
+ */
+function ricfrank_lang_switcher_block_view_alter(&$data, $block) {
+  if ($block->delta == 'language') {
+    $data['content'] = theme('lang_switcher', array());
+  }
+}
+
+function ricfrank_lang_switcher_getLanguage() {
+  global $language;
+  return $language->language;
+}
+
+function ricfrank_lang_switcher_get_active_class_by_language($langCode) {
+  return ricfrank_lang_switcher_getLanguage() == $langCode ? 'active' : '';
+}
